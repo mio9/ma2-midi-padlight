@@ -20,10 +20,10 @@ local function setMidiPad(row, column, state)
         local noteNo = (8 - row) * 8 + column
         local color = 119
         if state == "on" then
-            local result = gma.cmd("midinote 96 " .. noteNo .. " " .. color)
+            local result = gma.cmd("midinote 96." .. noteNo .. " " .. color)
             -- gma.echo("note "..noteNo.."/"..color)
         elseif state == "off" then
-            local result = gma.cmd("midinote 96 " .. noteNo .. " " .. "Off")
+            local result = gma.cmd("midinote 96." .. noteNo .. " " .. "Off")
             -- gma.echo("note "..noteNo.."/ Off")
         end
     end
